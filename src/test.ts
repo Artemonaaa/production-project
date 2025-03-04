@@ -1,3 +1,3 @@
 export function someFunction() {
-  console.log("Hello");
+  console.log("Check git user");
 }
