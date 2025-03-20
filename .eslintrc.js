@@ -33,7 +33,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': 'off'
   },
   globals: {
     __IS_DEV__: true,
