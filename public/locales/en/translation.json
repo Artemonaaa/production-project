@@ -1,5 +1,7 @@
 {
   "Welcome to React": "Welcome to React",
   "translate": "Translate",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "An unforeseen error occurred": "An unforeseen error occurred",
+  "Refresh page": "Refresh page"
 }
