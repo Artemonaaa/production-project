@@ -18,8 +18,8 @@ const Sidebar = ({ className }: SidebarProps) => {
   };
 
   return (
-    <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-      <Button onClick={onToggle}>TOGGLE</Button>
+    <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+      <Button data-testid="sidebar-toggle" onClick={onToggle}>TOGGLE</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.language} />
