@@ -23,7 +23,7 @@ export default {
     'node_modules',
   ],
   modulePaths: [
-    '<RootDir>src',
+    '<rootDir>src',
   ],
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
