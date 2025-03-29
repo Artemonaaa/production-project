@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -23,5 +23,3 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     </Button>
   );
 };
-
-export default ThemeSwitcher;
