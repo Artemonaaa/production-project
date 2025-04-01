@@ -29,7 +29,5 @@ export function buildPlugins({
     );
   }
 
-  return [
-
-  ];
+  return plugins;
 }
