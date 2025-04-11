@@ -1,4 +1,6 @@
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  ReactNode, useCallback, useEffect, useRef, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
@@ -35,7 +37,7 @@ const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener('keydown', onKeyDown)
+      window.addEventListener('keydown', onKeyDown);
     }
     return () => {
       clearTimeout(timerRef.current);
@@ -55,7 +57,7 @@ const Modal = (props: ModalProps) => {
   return (
     <div className={classNames(cls.modal, mods, [className])}>
       <div className={cls.overlay} onClick={closeHandler}>
-        <div className={cls.content  } onClick={onContentClick}>{children}</div>
+        <div className={cls.content} onClick={onContentClick}>{children}</div>
 
       </div>
     </div>
