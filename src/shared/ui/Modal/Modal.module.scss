@@ -10,6 +10,11 @@
   color: var(--primary-color);
 }
 
+.modal.light {
+  --bg-color: #e8e8ea;
+  --primary-color: #041c65;
+}
+
 .modal.dark {
   --bg-color: #090949;
   --primary-color: #04ff04;
