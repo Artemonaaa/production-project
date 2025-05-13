@@ -15,12 +15,12 @@ const Counter = () => {
   };
   return (
     <div>
-      <h1>
+      <h1 data-testid="value-title">
         Value =
         {counterValue}
       </h1>
-      <Button onClick={increment}>Increment</Button>
-      <Button onClick={decrement}>Decrement</Button>
+      <Button data-testid="increment-btn" onClick={increment}>Increment</Button>
+      <Button data-testid="decrement-btn" onClick={decrement}>Decrement</Button>
     </div>
   );
 };
