@@ -18,27 +18,58 @@ jobs:
           - 20.x
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
 
-      - run: npm ci
-               - name: Debug npm
-               run: |
-                 node -v
-                 npm -v
-                 ls -la
-                 ls -la node_modules
-                 ls -la node_modules/.bin
-                 npx eslint --version
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm run build:prod
+      - name: Debug environment
+        run: |
+          echo "===== Node ====="
+          node -v
 
-      - run: npm run lint:ts
+          echo "===== NPM ====="
+          npm -v
 
-      - run: npm run lint:scss
+          echo "===== Current directory ====="
+          pwd
 
-      - run: npm run test:unit
+          echo "===== Repository files ====="
+          ls -la
+
+          echo "===== node_modules exists? ====="
+          ls -la node_modules || true
+
+          echo "===== .bin ====="
+          ls -la node_modules/.bin || true
+
+          echo "===== package.json ====="
+          cat package.json
+
+          echo "===== npm ls eslint ====="
+          npm ls eslint || true
+
+          echo "===== npx eslint ====="
+          npx eslint --version || true
+
+          echo "===== which eslint ====="
+          which eslint || true
+
+      - name: Build
+        run: npm run build:prod
+
+      - name: Lint TypeScript
+        run: npm run lint:ts
+
+      - name: Lint SCSS
+        run: npm run lint:scss
+
+      - name: Unit tests
+        run: npm run test:unit
