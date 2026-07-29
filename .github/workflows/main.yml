@@ -26,6 +26,14 @@ jobs:
           cache: npm
 
       - run: npm ci
+               - name: Debug npm
+               run: |
+                 node -v
+                 npm -v
+                 ls -la
+                 ls -la node_modules
+                 ls -la node_modules/.bin
+                 npx eslint --version
 
       - run: npm run build:prod
 
